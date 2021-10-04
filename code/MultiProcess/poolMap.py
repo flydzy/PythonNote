@@ -6,4 +6,5 @@ def f(x):
 
 if __name__ == '__main__':
     with Pool(5) as p:
-        print(p.map_async(f, [1, 2, 3]).get())
+        print(p.map_async(f, [1, 2, 3]).get()) # 异步不阻塞
+        print(p.map(f, [1, 2, 3])) # 同步阻塞主进程
